@@ -21,15 +21,15 @@ import com.opentravel.common.utils.StringUtils;
 import com.opentravel.framework.web.service.ConfigService;
 
 /**
- * 登录验证
- * 
+ * 登錄驗證
+ *
  * @author ruoyi
  */
 @Controller
 public class SysLoginController extends BaseController
 {
     /**
-     * 是否开启记住我功能
+     * 是否開啟記住我功能
      */
     @Value("${shiro.rememberMe.enabled: false}")
     private boolean rememberMe;
@@ -40,14 +40,14 @@ public class SysLoginController extends BaseController
     @GetMapping("/login")
     public String login(HttpServletRequest request, HttpServletResponse response, ModelMap mmap)
     {
-        // 如果是Ajax请求，返回Json字符串。
+        // 如果是Ajax請求，返回Json字符串。
         if (ServletUtils.isAjaxRequest(request))
         {
-            return ServletUtils.renderString(response, "{\"code\":\"1\",\"msg\":\"未登录或登录超时。请重新登录\"}");
+            return ServletUtils.renderString(response, "{\"code\":\"1\",\"msg\":\"未登錄或登錄超時。請重新登錄\"}");
         }
-        // 是否开启记住我
+        // 是否開啟記住我
         mmap.put("isRemembered", rememberMe);
-        // 是否开启用户注册
+        // 是否開啟用戶註冊
         mmap.put("isAllowRegister", Convert.toBool(configService.getKey("sys.account.registerUser"), false));
         return "login";
     }
@@ -65,7 +65,7 @@ public class SysLoginController extends BaseController
         }
         catch (AuthenticationException e)
         {
-            String msg = "用户或密码错误";
+            String msg = "用戶或密碼錯誤";
             if (StringUtils.isNotEmpty(e.getMessage()))
             {
                 msg = e.getMessage();

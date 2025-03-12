@@ -26,6 +26,8 @@ target/
 *.ipr
 *.yml
 *.md
+*.bat
+*.sh
 ### JRebel ###
 rebel.xml
 ### NetBeans ###

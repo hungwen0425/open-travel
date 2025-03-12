@@ -19,8 +19,8 @@ import com.opentravel.system.domain.SysLogininfor;
 import com.opentravel.system.service.ISysLogininforService;
 
 /**
- * 系统访问记录
- * 
+ * 系統訪問記錄
+ *
  * @author ruoyi
  */
 @Controller
@@ -52,7 +52,7 @@ public class SysLogininforController extends BaseController
         return getDataTable(list);
     }
 
-    @Log(title = "登录日志", businessType = BusinessType.EXPORT)
+    @Log(title = "登錄日志", businessType = BusinessType.EXPORT)
     @RequiresPermissions("monitor:logininfor:export")
     @PostMapping("/export")
     @ResponseBody
@@ -60,20 +60,20 @@ public class SysLogininforController extends BaseController
     {
         List<SysLogininfor> list = logininforService.selectLogininforList(logininfor);
         ExcelUtil<SysLogininfor> util = new ExcelUtil<SysLogininfor>(SysLogininfor.class);
-        return util.exportExcel(list, "登录日志");
+        return util.exportExcel(list, "登錄日志");
     }
 
     @RequiresPermissions("monitor:logininfor:remove")
-    @Log(title = "登录日志", businessType = BusinessType.DELETE)
+    @Log(title = "登錄日志", businessType = BusinessType.DELETE)
     @PostMapping("/remove")
     @ResponseBody
     public AjaxResult remove(String ids)
     {
         return toAjax(logininforService.deleteLogininforByIds(ids));
     }
-    
+
     @RequiresPermissions("monitor:logininfor:remove")
-    @Log(title = "登录日志", businessType = BusinessType.CLEAN)
+    @Log(title = "登錄日志", businessType = BusinessType.CLEAN)
     @PostMapping("/clean")
     @ResponseBody
     public AjaxResult clean()
@@ -83,7 +83,7 @@ public class SysLogininforController extends BaseController
     }
 
     @RequiresPermissions("monitor:logininfor:unlock")
-    @Log(title = "账户解锁", businessType = BusinessType.OTHER)
+    @Log(title = "賬戶解鎖", businessType = BusinessType.OTHER)
     @PostMapping("/unlock")
     @ResponseBody
     public AjaxResult unlock(String loginName)

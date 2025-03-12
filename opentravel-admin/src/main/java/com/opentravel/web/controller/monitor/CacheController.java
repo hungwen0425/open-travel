@@ -13,8 +13,8 @@ import com.opentravel.common.core.domain.AjaxResult;
 import com.opentravel.framework.web.service.CacheService;
 
 /**
- * 缓存监控
- * 
+ * 緩存監控
+ *
  * @author ruoyi
  */
 @Controller

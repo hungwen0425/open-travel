@@ -15,34 +15,34 @@ import springfox.documentation.spring.web.plugins.Docket;
 
 /**
  * Swagger2的接口配置
- * 
+ *
  * @author ruoyi
  */
 @Configuration
 public class SwaggerConfig
 {
-    /** 是否开启swagger */
+    /** 是否開啟swagger */
     @Value("${swagger.enabled}")
     private boolean enabled;
-    
+
     /**
-     * 创建API
+     * 創建API
      */
     @Bean
     public Docket createRestApi()
     {
         return new Docket(DocumentationType.OAS_30)
-                // 是否启用Swagger
+                // 是否啟用Swagger
                 .enable(enabled)
-                // 用来创建该API的基本信息，展示在文档的页面中（自定义展示的信息）
+                // 用來創建該API的基本信息，展示在文檔的頁面中（自定義展示的信息）
                 .apiInfo(apiInfo())
-                // 设置哪些接口暴露给Swagger展示
+                // 設置哪些接口暴露給Swagger展示
                 .select()
-                // 扫描所有有注解的api，用这种方式更灵活
+                // 掃描所有有註解的api，用這種方式更靈活
                 .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))
-                // 扫描指定包中的swagger注解
+                // 掃描指定包中的swagger註解
                 //.apis(RequestHandlerSelectors.basePackage("com.opentravel.project.tool.swagger"))
-                // 扫描所有 .apis(RequestHandlerSelectors.any())
+                // 掃描所有 .apis(RequestHandlerSelectors.any())
                 .paths(PathSelectors.any())
                 .build();
     }
@@ -52,16 +52,16 @@ public class SwaggerConfig
      */
     private ApiInfo apiInfo()
     {
-        // 用ApiInfoBuilder进行定制
+        // 用ApiInfoBuilder進行定制
         return new ApiInfoBuilder()
-                // 设置标题
-                .title("标题：若依管理系统_接口文档")
+                // 設置標題
+                .title("標題：若依管理系統_接口文檔")
                 // 描述
-                .description("描述：用于管理集团旗下公司的人员信息,具体包括XXX,XXX模块...")
+                .description("描述：用於管理集團旗下公司的人員信息,具體包括XXX,XXX模塊...")
                 // 作者信息
                 .contact(new Contact(RuoYiConfig.getName(), null, null))
                 // 版本
-                .version("版本号:" + RuoYiConfig.getVersion())
+                .version("版本號:" + RuoYiConfig.getVersion())
                 .build();
     }
 }

@@ -9,8 +9,8 @@ import com.opentravel.common.core.controller.BaseController;
 import com.opentravel.framework.web.domain.Server;
 
 /**
- * 服务器监控
- * 
+ * 服務器監控
+ *
  * @author ruoyi
  */
 @Controller

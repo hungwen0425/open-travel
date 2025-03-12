@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.opentravel.common.core.controller.BaseController;
 
 /**
- * druid 监控
- * 
+ * druid 監控
+ *
  * @author ruoyi
  */
 @Controller

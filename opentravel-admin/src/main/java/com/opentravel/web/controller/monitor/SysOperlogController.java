@@ -20,8 +20,8 @@ import com.opentravel.system.domain.SysOperLog;
 import com.opentravel.system.service.ISysOperLogService;
 
 /**
- * 操作日志记录
- * 
+ * 操作日志記錄
+ *
  * @author ruoyi
  */
 @Controller
@@ -77,7 +77,7 @@ public class SysOperlogController extends BaseController
         mmap.put("operLog", operLogService.selectOperLogById(operId));
         return prefix + "/detail";
     }
-    
+
     @Log(title = "操作日志", businessType = BusinessType.CLEAN)
     @RequiresPermissions("monitor:operlog:remove")
     @PostMapping("/clean")

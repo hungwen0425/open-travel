@@ -12,7 +12,7 @@
     <artifactId>opentravel-admin</artifactId>
 
     <description>
-        web服务入口
+        web服務入口
     </description>
 
     <dependencies>
@@ -27,7 +27,7 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
-            <optional>true</optional> <!-- 表示依赖不会传递 -->
+            <optional>true</optional> <!-- 表示依賴不會傳遞 -->
         </dependency>
 
         <!-- swagger3-->
@@ -36,32 +36,32 @@
             <artifactId>springfox-boot-starter</artifactId>
         </dependency>
 
-        <!-- 防止进入swagger页面报类型转换错误，排除3.0.0中的引用，手动增加1.6.2版本 -->
+        <!-- 防止進入swagger頁面報類型轉換錯誤，排除3.0.0中的引用，手動增加1.6.2版本 -->
         <dependency>
             <groupId>io.swagger</groupId>
             <artifactId>swagger-models</artifactId>
             <version>1.6.2</version>
         </dependency>
 
-        <!-- Mysql驱动包 -->
+        <!-- Mysql驅動包 -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
 
-        <!-- 核心模块-->
+        <!-- 核心模塊-->
         <dependency>
             <groupId>com.opentravel</groupId>
             <artifactId>opentravel-framework</artifactId>
         </dependency>
 
-        <!-- 定时任务-->
+        <!-- 定時任務-->
         <dependency>
             <groupId>com.opentravel</groupId>
             <artifactId>opentravel-quartz</artifactId>
         </dependency>
 
-        <!-- 代码生成-->
+        <!-- 代碼生成-->
         <dependency>
             <groupId>com.opentravel</groupId>
             <artifactId>opentravel-generator</artifactId>
@@ -76,7 +76,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>2.5.15</version>
                 <configuration>
-                    <fork>true</fork> <!-- 如果没有该配置，devtools不会生效 -->
+                    <fork>true</fork> <!-- 如果沒有該配置，devtools不會生效 -->
                 </configuration>
                 <executions>
                     <execution>
@@ -86,16 +86,16 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>   
-                <groupId>org.apache.maven.plugins</groupId>   
-                <artifactId>maven-war-plugin</artifactId>   
-                <version>3.0.0</version>   
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.0.0</version>
                 <configuration>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                     <warName>${project.artifactId}</warName>
-                </configuration>   
-            </plugin>   
-            <!-- YUI Compressor (CSS/JS压缩) 
+                </configuration>
+            </plugin>
+            <!-- YUI Compressor (CSS/JS壓縮)
             <plugin>
                 <groupId>net.alchim31.maven</groupId>
                 <artifactId>yuicompressor-maven-plugin</artifactId>
